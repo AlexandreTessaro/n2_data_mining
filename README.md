@@ -58,12 +58,6 @@ Verificar a existência de um grupo incomum de passageiros (outliers) no dataset
         
     -   Tempo de uso do aeroporto (`Q6LONGUSE`): 2.54
 
-    -   **Tamanho**: 
-    ![Texto alternativo](resultados\grafico_cotovelo.png)
-
-
-        
-
 ----------
 
 ## Parte 2 - Regras de Associação em Problema Não-Comercial
