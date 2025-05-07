@@ -37,20 +37,26 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 y_proba = model.predict_proba(X_test)[:, 1]
 
-print("Relatório de Classificação:")
-print(classification_report(y_test, y_pred))
+# Relatório de Classificação
+print("\n----------------------- Relatório de Classificação -----------------------")
+report = classification_report(y_test, y_pred, target_names=['Classe 0', 'Classe 1'], digits=2)
+print(report)
 
-print("Matriz de Confusão:")
-print(confusion_matrix(y_test, y_pred))
+# Matriz de Confusão
+print("\n----------------------- Matriz de Confusão ------------------------------")
+cm = confusion_matrix(y_test, y_pred)
+print(f"[[{cm[0][0]} {cm[0][1]}]  # Verdadeiros Negativos (0) e Falsos Positivos (1)]")
+print(f" [{cm[1][0]} {cm[1][1]}]]  # Falsos Negativos (0) e Verdadeiros Positivos (1)")
 
-print("ROC AUC Score:")
-print(roc_auc_score(y_test, y_proba))
+# ROC AUC Score
+roc_auc = roc_auc_score(y_test, y_proba)
+print(f"\n----------------------- ROC AUC Score ------------------------------")
+print(f"ROC AUC Score: {roc_auc:.4f}")
 
-# 10. Coeficientes do modelo
+# Coeficientes do Modelo
+print("\n----------------------- Coeficientes do Modelo ------------------------")
 coef_df = pd.DataFrame({
     'Variável': ['Q20Age', 'Q21Gender', 'Q22Income', 'Q23FLY', 'Q5TIMESFLOWN', 'Q6LONGUSE'],
     'Coeficiente': model.coef_[0]
 })
-
-print("\nCoeficientes do Modelo:")
-print(coef_df)
+print(coef_df.to_string(index=False))

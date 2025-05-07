@@ -57,6 +57,11 @@ Verificar a existência de um grupo incomum de passageiros (outliers) no dataset
     -   Experiência de voo (`Q5TIMESFLOWN`): 2.35
         
     -   Tempo de uso do aeroporto (`Q6LONGUSE`): 2.54
+
+    -   **Tamanho**: 
+    ![Texto alternativo](C:\Users\alexa\Downloads\n2_data_mining-1\resultados\grafico_cotovelo.png)
+
+
         
 
 ----------
